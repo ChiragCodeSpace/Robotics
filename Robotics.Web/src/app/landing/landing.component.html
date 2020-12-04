@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+       <p-dropdown [options]="robos" [(ngModel)]="selectedRobo" optionLabel="name"></p-dropdown>
+        X: <input type="number" [(ngModel)]="distanceX" />
+        Y: <input type="number" [(ngModel)]="distanceY" />
+        <input type="submit" (click)="calculate()" value="Move" />
+    </div>
+  </div>
+  <div class="row">
+    <app-bar-chart [chartData]="chartData"></app-bar-chart>
+  </div> 
+  <div class="row" *ngFor="let d of totalDistance">
+    Total distance travelled by {{d.option}} robots: {{d.distance}} 
+  </div>
+</div>
